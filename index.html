@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rueda de la Vida</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body class="bg-gray-100 font-sans">
+    <div class="container mx-auto my-10 p-5">
+      <!-- Encabezado -->
+      <h1 class="text-4xl font-bold text-center mb-5">Rueda de la Vida</h1>
+
+      <!-- Areas -->
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-xl font-semibold">Salud Física</h2>
+          <input
+            type="number"
+            id="salud"
+            class="w-full mt-2 p-2 border rounded"
+            min="1"
+            max="10"
+            placeholder="Puntúa del 1 al 10"
+          />
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-xl font-semibold">Trabajo</h2>
+          <input
+            type="number"
+            id="trabajo"
+            class="w-full mt-2 p-2 border rounded"
+            min="1"
+            max="10"
+            placeholder="Puntúa del 1 al 10"
+          />
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-xl font-semibold">Relación Sentimental</h2>
+          <input
+            type="number"
+            id="relacion"
+            class="w-full mt-2 p-2 border rounded"
+            min="1"
+            max="10"
+            placeholder="Puntúa del 1 al 10"
+          />
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-xl font-semibold">Familia y Amigos</h2>
+          <input
+            type="number"
+            id="familia"
+            class="w-full mt-2 p-2 border rounded"
+            min="1"
+            max="10"
+            placeholder="Puntúa del 1 al 10"
+          />
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-xl font-semibold">Situacion Financiera</h2>
+          <input
+            type="number"
+            id="finanzas"
+            class="w-full mt-2 p-2 border rounded"
+            min="1"
+            max="10"
+            placeholder="Puntúa del 1 al 10"
+          />
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-xl font-semibold">Estado Emocional</h2>
+          <input
+            type="number"
+            id="emocional"
+            class="w-full mt-2 p-2 border rounded"
+            min="1"
+            max="10"
+            placeholder="Puntúa del 1 al 10"
+          />
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-xl font-semibold">Diveresión y ocio</h2>
+          <input
+            type="number"
+            id="diveresion"
+            class="w-full mt-2 p-2 border rounded"
+            min="1"
+            max="10"
+            placeholder="Puntúa del 1 al 10"
+          />
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-xl font-semibold">Contribucion</h2>
+          <input
+            type="number"
+            id="contribucion"
+            class="w-full mt-2 p-2 border rounded"
+            min="1"
+            max="10"
+            placeholder="Puntúa del 1 al 10"
+          />
+        </div>
+      </div>
+
+      <!-- Botón para generar el reporte -->
+      <div class="mt-10">
+        <button
+          id="generateReport"
+          class="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-700 transition"
+        >
+          Generar Reporte
+        </button>
+      </div>
+
+      <!-- Sección de gráficos -->
+      <div id ="graphSection" class="bg-white p-5 rounded-lg shadow-lg mt-10 hidden">
+        <canvas id="radarChart" class="w-64 h-64 md:w-96 md:h-96">
+        </canvas>
+      </div>
+    </div>
+
+    <!-- Visualización a 12 meses -->
+    <div id="visualizationSection" class="bg-white p-5 rounded-lg shadow-lg mt-10 hidden">
+        <div class="bg-gray-100 font-sans p-5 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold mb-4">Visualización a 12 meses</h2>
+            <div id="areasText"></div> <!-- Aquí se generarán los cuadros de texto -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Visualización a 3 meses -->
+    <div id="visualizationSection3" class="bg-white p-5 rounded-lg shadow-lg mt-10 hidden">
+        <div class="bg-gray-100 font-sans p-5 rounded-lg shadow-lg">
+        <h2 class=" text-2xl font-semibold mb-4">Visualización a 3 meses</h2>
+        <div id="areasText3"></div> <!-- Aquí se generarán los cuadros de texto para 3 meses -->
+    </div>
+    </div>
+    </div>
+
+
+
+    <!-- Botón para imprimir la página -->
+    <div  class="mt-10">
+    <button id="printButton" class="bg-green-500 text-white p-3 rounded-full hover:bg-green-700 transition hidden text-center">Imprimir / Guardar como PDF</button>
+    </div>
+
+    <script src="app.js"></script>
+
+    <footer class="bg-gray-400 text-white py-4 text-center">
+        <p>©Creado por Jose Daniel Solano para Neuromentoring 2024</p>
+    </footer>
+  </body>
+</html>
