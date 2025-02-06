@@ -68,7 +68,7 @@ document
           {
             label: "Progreso Actual",
             data: data,
-            backgroundColor: "rgba(106, 90, 2052, 0.2)", // Fondo semitransparente
+            backgroundColor: "rgba(106, 90, 205, 0.2)", // Fondo semitransparente
             borderColor: "rgba(106, 90, 205, 1)", // Borde del gráfico
             borderWidth: 1.5,
             fill: true,
@@ -182,9 +182,27 @@ document
     document.getElementById("printButton").classList.remove("hidden");
 
     // Función para imprimir o guardar como PDF
+
     document
       .getElementById("printButton")
       .addEventListener("click", function () {
-        window.print(); // Abre el cuadro de diálogo de impresión
+        const canvas = document.getElementById("radarChart");
+
+        // Store original chart size
+        const originalWidth = canvas.style.width;
+        const originalHeight = canvas.style.height;
+
+        // Resize chart for printing
+        canvas.style.width = "650px"; // Adjust width to fit page
+        canvas.style.height = "650px"; // Adjust height to keep aspect ratio
+
+        // Wait a bit for resizing to apply, then print
+        setTimeout(() => {
+          window.print();
+
+          // Restore original size after printing
+          canvas.style.width = originalWidth;
+          canvas.style.height = originalHeight;
+        }, 500);
       });
   });
