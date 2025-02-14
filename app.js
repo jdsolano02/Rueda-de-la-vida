@@ -10,7 +10,7 @@ document
     const familia = parseInt(document.getElementById("familia").value);
     const finanzas = parseInt(document.getElementById("finanzas").value);
     const emocional = parseInt(document.getElementById("emocional").value);
-    const diversion = parseInt(document.getElementById("diveresion").value);
+    const diversion = parseInt(document.getElementById("diversion").value);
     const contribucion = parseInt(
       document.getElementById("contribucion").value
     );
@@ -26,9 +26,9 @@ document
         emocional,
         diversion,
         contribucion,
-      ].some((val) => isNaN(val) || val < 1 || val > 10)
+      ].some((val) => isNaN(val) || val < 0 || val > 10)
     ) {
-      alert("Por favor, puntúa todas las áreas con valores entre 1 y 10.");
+      alert("Por favor, puntúa todas las áreas con valores entre 0 y 10.");
       return;
     }
 
@@ -77,17 +77,21 @@ document
       },
       options: {
         scale: {
-          ticks: {
-            beginAtZero: true,
-            max: 10,
-            stepSize: 1,
-            fontSize: 24,
+          r: {
+            min: 0, // Rango mínimo 0
+            max: 10, // Rango máximo 10
+            ticks: {
+              stepSize: 1,
+              font: {
+                size: 14, // Ajustar tamaño de fuente
+              },
+            },
           },
           angleLines: {
             display: true,
             lineWidth: 1,
           },
-          gridLines: {
+          grid: {
             circular: true,
           },
         },
