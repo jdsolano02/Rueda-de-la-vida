@@ -26,11 +26,22 @@
       </p>
       </header>
 
-      <!-- Areas -->
+<!-- Areas -->
 
+    <!-- Grid para las cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
+
+
+  <!-- Saluid Física -->
+        <div class="bg-white p-6 rounded-lg shadow-lg relative">
           <h2 class="text-xl font-semibold">Salud Física</h2>
+          
+        <!-- boton-->
+          <button onclick="toggleDropdown('saludInfo')" class="absolute top-2 right-2 text-blue-500 hover:text-blue-700">
+             <img src="images/icons8-info-24.png">
+          </button>
+
+        <!-- inputs -->
           <input
             type="number"
             id="salud"
@@ -39,10 +50,25 @@
             max="10"
             placeholder="Puntúa del 0 al 10"
           />
+
+        <!-- frase que despliega el boton --> 
+          <div id="saludInfo" class="hidden bg-blue-100 p-3 mt-2 rounded-lg text-sm">
+            <p>¿Cómo te has cuidado físicamente en los últimos meses?</p>
+          </div>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-lg">
+
+  <!-- Trabajo -->
+        <div class="bg-white p-6 rounded-lg shadow-lg relative">
           <h2 class="text-xl font-semibold">Trabajo</h2>
+
+
+        <!-- boton-->
+          <button onclick="toggleDropdown('trabajoInfo')" class="absolute top-2 right-2 text-blue-500 hover:text-blue-700">
+            <img src="images/icons8-info-24.png">
+         </button>
+
+        <!-- inputs -->
           <input
             type="number"
             id="trabajo"
@@ -51,10 +77,26 @@
             max="10"
             placeholder="Puntúa del 0 al 10"
           />
+
+        <!-- frase que despliega el boton --> 
+          <div id="trabajoInfo" class="hidden bg-blue-100 p-3 mt-2 rounded-lg text-sm">
+            <p>¿Sientes pasión y propósito en tu trabajo actual?</p>
+          </div>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-lg">
+
+
+  <!-- Relación sentimental -->
+        <div class="bg-white p-6 rounded-lg shadow-lg relative">
           <h2 class="text-xl font-semibold">Relación Sentimental</h2>
+
+
+        <!-- boton-->
+          <button onclick="toggleDropdown('relacionInfo')" class="absolute top-2 right-2 text-blue-500 hover:text-blue-700">
+            <img src="images/icons8-info-24.png">
+         </button>
+
+        <!-- inputs -->
           <input
             type="number"
             id="relacion"
@@ -63,10 +105,23 @@
             max="10"
             placeholder="Puntúa del 0 al 10"
           />
+
+        <!-- frase que despliega el boton --> 
+          <div id="relacionInfo" class="hidden bg-blue-100 p-3 mt-2 rounded-lg text-sm">
+            <p>¿Cómo te sientes en tu relación actual?</p>
+          </div>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-lg">
+  <!-- Familia y Amigos -->
+        <div class="bg-white p-6 rounded-lg shadow-lg relative">
           <h2 class="text-xl font-semibold">Familia y Amigos</h2>
+
+        <!-- boton-->
+          <button onclick="toggleDropdown('familiaInfo')" class="absolute top-2 right-2 text-blue-500 hover:text-blue-700">
+            <img src="images/icons8-info-24.png">
+         </button>
+
+        <!-- inputs -->
           <input
             type="number"
             id="familia"
@@ -75,10 +130,23 @@
             max="10"
             placeholder="Puntúa del 0 al 10"
           />
+
+        <!-- frase que despliega el boton --> 
+          <div id="familiaInfo" class="hidden bg-blue-100 p-3 mt-2 rounded-lg text-sm">
+            <p>¿Cómo nutres tus relaciones con familiares y amigos?</p>
+          </div>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-lg">
+  <!-- Finanzas -->
+        <div class="bg-white p-6 rounded-lg shadow-lg relative">
           <h2 class="text-xl font-semibold">Situación Financiera</h2>
+
+        <!-- boton-->
+          <button onclick="toggleDropdown('finanzasInfo')" class="absolute top-2 right-2 text-blue-500 hover:text-blue-700">
+            <img src="images/icons8-info-24.png">
+         </button>
+
+        <!-- inputs -->
           <input
             type="number"
             id="finanzas"
@@ -87,10 +155,23 @@
             max="10"
             placeholder="Puntúa del 0 al 10"
           />
+
+        <!-- frase que despliega el boton --> 
+          <div id="finanzasInfo" class="hidden bg-blue-100 p-3 mt-2 rounded-lg text-sm">
+            <p>¿Tu administración financiera te permite alcanzar tus metas?</p>
+          </div>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-lg">
+  <!-- Estado emocional -->
+        <div class="bg-white p-6 rounded-lg shadow-lg relative">
           <h2 class="text-xl font-semibold">Estado Emocional</h2>
+
+        <!-- boton-->
+          <button onclick="toggleDropdown('emocionalInfo')" class="absolute top-2 right-2 text-blue-500 hover:text-blue-700">
+            <img src="images/icons8-info-24.png">
+         </button>
+
+        <!-- inputs -->
           <input
             type="number"
             id="emocional"
@@ -99,10 +180,24 @@
             max="10"
             placeholder="Puntúa del 0 al 10"
           />
+
+        <!-- frase que despliega el boton --> 
+          <div id="emocionalInfo" class="hidden bg-blue-100 p-3 mt-2 rounded-lg text-sm">
+            <p>¿Qué actividades o prácticas te ayudan a cultivar emociones positivas y bienestar?</p>
+          </div>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-lg">
+
+  <!-- Diversión y ocio -->
+        <div class="bg-white p-6 rounded-lg shadow-lg relative">
           <h2 class="text-xl font-semibold">Diversión y ocio</h2>
+
+        <!-- boton-->
+          <button onclick="toggleDropdown('diversionInfo')" class="absolute top-2 right-2 text-blue-500 hover:text-blue-700">
+            <img src="images/icons8-info-24.png">
+         </button>
+
+        <!-- inputs -->
           <input
             type="number"
             id="diversion"
@@ -111,10 +206,23 @@
             max="10"
             placeholder="Puntúa del 0 al 10"
           />
+
+        <!-- frase que despliega el boton --> 
+          <div id="diversionInfo" class="hidden bg-blue-100 p-3 mt-2 rounded-lg text-sm">
+            <p>¿Te permites disfrutar de tiempo libre y actividades recreativas?</p>
+          </div>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-lg">
+  <!-- Contribución -->
+        <div class="bg-white p-6 rounded-lg shadow-lg relative">
           <h2 class="text-xl font-semibold">Contribución</h2>
+
+        <!--boton-->
+          <button onclick="toggleDropdown('contribucionInfo')" class="absolute top-2 right-2 text-blue-500 hover:text-blue-700">
+            <img src="images/icons8-info-24.png">
+         </button>
+
+        <!-- inputs -->
           <input
             type="number"
             id="contribucion"
@@ -123,10 +231,15 @@
             max="10"
             placeholder="Puntúa del 0 al 10"
           />
+
+          <!-- frase que despliega el boton --> 
+          <div id="contribucionInfo" class="hidden bg-blue-100 p-3 mt-2 rounded-lg text-sm">
+            <p>¿De qué manera sientes que estás contribuyendo al mundo o a tu comunidad?</p>
+          </div>
         </div>
       </div>
 
-      <!-- Botón para generar el reporte -->
+    <!-- Botón para generar el reporte -->
       <div class="mt-10">
         <button
           id="generateReport"
@@ -144,20 +257,20 @@
 
     </div>
 
-    <!-- Visualización a 12 meses -->
-    <div id="visualizationSection" class="bg-white p-5 rounded-lg shadow-lg mt-10 hidden">
-        <div class="bg-gray-100 font-sans p-5 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-semibold mb-4">Mis propósitos en los próximos 12 meses</h2>
-            <div id="areasText"></div> <!-- Aquí se generarán los cuadros de texto -->
-            </div>
-        </div>
-    </div>
-
     <!-- Visualización a 3 meses -->
     <div id="visualizationSection3" class="bg-white p-5 rounded-lg shadow-lg mt-10 hidden">
         <div class="bg-gray-100 font-sans p-5 rounded-lg shadow-lg">
         <h2 class=" text-2xl font-semibold mb-4">Mis propósitos en los próximos 3 meses</h2>
         <div id="areasText3"></div> <!-- Aquí se generarán los cuadros de texto para 3 meses -->
+    </div>
+    </div>
+
+<!-- Visualización a 12 meses -->
+    <div id="visualizationSection" class="bg-white p-5 rounded-lg shadow-lg mt-10 hidden">
+      <div class="bg-gray-100 font-sans p-5 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-semibold mb-4">Mis propósitos en los próximos 12 meses</h2>
+        <div id="areasText"></div> <!-- Aquí se generarán los cuadros de texto -->
+        </div>
     </div>
     </div>
     </div>

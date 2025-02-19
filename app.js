@@ -1,5 +1,10 @@
 // app.js
 
+function toggleDropdown(id) {
+  let element = document.getElementById(id);
+  element.classList.toggle("hidden");
+}
+
 document
   .getElementById("generateReport")
   .addEventListener("click", function () {
