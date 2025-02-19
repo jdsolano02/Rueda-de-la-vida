@@ -5,6 +5,18 @@ function toggleDropdown(id) {
   element.classList.toggle("hidden");
 }
 
+function obtenerFecha() {
+  const fecha = new Date();
+  const opciones = { year: "numeric", month: "long", day: "numeric" };
+  document.getElementById("fechaActual").innerText = fecha.toLocaleDateString(
+    "es-ES",
+    opciones
+  );
+}
+
+// Llamar a la función al cargar la página
+obtenerFecha();
+
 document
   .getElementById("generateReport")
   .addEventListener("click", function () {
